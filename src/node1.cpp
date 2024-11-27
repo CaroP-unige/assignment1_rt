@@ -63,13 +63,6 @@ int main (int argc, char **argv)
 	srv2.request.theta = 2.0; // Orientation of turtle2
 	srv2.request.name = "turtle2"; 
 	client1.call(srv2); // Call to the service to create turtle2
-	
-	//if (client1.call(srv2)) {
-    	//std::cout << "Turtle2 creata con successo.\n";
-	//} else {
-    	//std::cerr << "Errore: impossibile creare turtle2 tramite servizio /spawn.\n";
-    //return 1;
-	//}
 
 	// Start of the code for user interaction. It is important to note that the program is implemented on the turtle's reference system
 	
