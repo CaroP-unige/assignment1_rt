@@ -59,17 +59,17 @@ Follow these steps to set up the project:
 
 1. Clone the repository:
 
-git clone <repository-URL>
-cd <folder-name>
+	- *git clone https://github.com/CaroP-unige/assignment1_rt.git*
+	- *cd assignment1_rt*
 
-2. Build the project: catkin_make
+2. Build the project: *catkin_make*
 
 3. Launch processes in separate terminals:
 
-	- Terminal 1: Start ROS: roscore
-	- Terminal 2: Launch the turtlesim simulator: rosrun turtlesim turtlesim_node
-	- Terminal 3: Launch node1: rosrun <package-name> node1
-	- Terminal 4: Launch node2: rosrun <package-name> node2
+	- Terminal 1: Start ROS: *roscore*
+	- Terminal 2: Launch the turtlesim simulator: *rosrun turtlesim turtlesim_node*
+	- Terminal 3: Launch node1: *rosrun turtlesim node1*
+	- Terminal 4: Launch node2: *rosrun turtlesim node2*
 
 ## Usage
 
