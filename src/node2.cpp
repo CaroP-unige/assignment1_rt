@@ -50,7 +50,7 @@ void controll_th(){
 	// Compute the the Euclidean distance between the turtles
 	float distance = sqrt(pow(( pose_turtle_1.x - pose_turtle_2.x ),2)+pow(( pose_turtle_1.y - pose_turtle_2.y ),2));
 		
-	std::cout << "Distance: " << distance << "\n"; // CONTROLLARE CHE SIA REALMENTE PUBBLICATA
+	std::cout << "Distance: " << distance << "\n"; 
 	
 	// Control to stop the turtle if they are too close to each other						
 	if((distance < threshold)){
