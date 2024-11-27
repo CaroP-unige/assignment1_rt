@@ -39,9 +39,9 @@ In both cases, the movement is stopped by forcing the speed to zero.
 	-----------------------------
 - **Feature 2: Safety controls (`node2.cpp`)**
 
-- **Workspace boundaries:** If a turtle gets too close to the edges, its speed is stopped.
-- **Minimum distance:** If the distance between the turtles is less than 2 units, both stop moving.
-- Positions are updated in real-time using two `Subscriber` objects.
+  - *Workspace boundaries:* If a turtle gets too close to the edges, its speed is stopped.
+  - *Minimum distance:* If the distance between the turtles is less than 2 units, both stop moving.
+  - Positions are updated in real-time using two `Subscriber` objects.
 
 ## Technologies 
 
