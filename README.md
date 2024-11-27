@@ -31,17 +31,11 @@ In both cases, the movement is stopped by forcing the speed to zero.
 
    **Example interaction:**
 
-	% Which turtle do you want to move?
-	% 1 = turtle1
-	% 2 = turtle2
+	% Which turtle do you want to move? / 1 = turtle1 / 2 = turtle2
 	-----------------------------
-	% How do you want the turtle to move?
-	% 1 = right
-	% 2 = left
-	% 3 = forward
-	% 4 = backward
+	% How do you want the turtle to move? / 1 = right / 2 = left / 3 = forward / 4 = backward
 	-----------------------------
-	% What linear speed should the turtle move with?
+	% At what speed do you want the turtle to move?
 	-----------------------------
 - **Feature 2: Safety controls (`node2.cpp`)**
 
