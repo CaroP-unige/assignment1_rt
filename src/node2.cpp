@@ -8,6 +8,7 @@
 #include <unistd.h>
 #include "ros/ros.h"
 #include "turtlesim/Pose.h"
+#include "std_msgs/Float32.h"
 #include "geometry_msgs/Twist.h" 
 
 int threshold = 2;
@@ -20,9 +21,11 @@ ros::Subscriber sub_pose_turtle_2; // It subscribes to the topic 'turtle2/pose' 
 
 ros::Publisher pub_vel_turtle_1; 
 ros::Publisher pub_vel_turtle_2;
+ros::Publisher pub_distance;
 
 turtlesim::Pose pose_turtle_1;
 turtlesim::Pose pose_turtle_2;
+
 
 // Function to prevent the turtles from colliding with the window
 void check_boundaries(const turtlesim::Pose& pose, ros::Publisher& publisher, const std::string& turtle_name) {
@@ -49,8 +52,13 @@ void pose_turtle_Callback_2(const turtlesim::Pose::ConstPtr& msg){
 void controll_th(){
 	// Compute the the Euclidean distance between the turtles
 	float distance = sqrt(pow(( pose_turtle_1.x - pose_turtle_2.x ),2)+pow(( pose_turtle_1.y - pose_turtle_2.y ),2));
-		
-	std::cout << "Distance: " << distance << "\n"; 
+	
+	std_msgs::Float32 distance_message;
+	distance_message.data = distance;
+	pub_distance.publish(distance_message);
+	
+	
+	std::cout << "Distance: " << distance_message << "\n"; 
 	
 	// Control to stop the turtle if they are too close to each other						
 	if((distance < threshold)){
@@ -75,6 +83,8 @@ int main (int argc, char **argv)
 	// Publisher to stop the turtles in case of violations
 	pub_vel_turtle_1 = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel",1);
 	pub_vel_turtle_2 = nh.advertise<geometry_msgs::Twist>("turtle2/cmd_vel",1);
+	
+	pub_distance = nh.advertise<std_msgs::Float32>("/distance",1);
 	
 	ros::Rate rate(loop_rate); // Execution frequency
 	
