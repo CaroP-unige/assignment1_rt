@@ -10,7 +10,6 @@
 #include "turtlesim/Spawn.h"
 #include "geometry_msgs/Twist.h" 
 
-
 using namespace std;
 
 ros::Publisher pub_1;
@@ -20,6 +19,7 @@ int command, command_1;
 float command_2;
 
 void set_velocity(int direction, float speed, ros::Publisher& publisher) {
+
     geometry_msgs::Twist vel;
     switch (direction) {
         case 1: // to the right
@@ -49,30 +49,27 @@ int main (int argc, char **argv)
 	
 	// Code to publish the linear and angular velocity messages of the two turtles (type: geometry_msgs::Twist)
 	// Both Publishers publish on the respective turtles' topics (cmd_vel)
-	
 	pub_1 = nh.advertise<geometry_msgs::Twist>("turtle1/cmd_vel",1); // related to turtle1
 	pub_2 = nh.advertise<geometry_msgs::Twist>("turtle2/cmd_vel",1); // related to turtle2
 	
 	// Creation of the second turtle (turtle2) using the 'spawn' service from the 'turtlesim' package 
-	
 	ros::ServiceClient client1 =  nh.serviceClient<turtlesim::Spawn>("/spawn"); 
 	turtlesim::Spawn srv2;
 	// Select the name and position of the new turtle
 	srv2.request.x = 2.0; 
 	srv2.request.y = 1.0;
-	srv2.request.theta = 2.0; // Orientation of turtle2
+	srv2.request.theta = 0.0; // Orientation of turtle2
 	srv2.request.name = "turtle2"; 
 	client1.call(srv2); // Call to the service to create turtle2
 
 	// Start of the code for user interaction. It is important to note that the program is implemented on the turtle's reference system
-	
 	while(ros::ok()){
-		std::cout << "Which turtle do you want to move? \n";
+		cout << "Which turtle do you want to move? \n";
 		cout << "1 = turtle1 \n";
 		cout << "2 = turtle2 \n";
 		cin >> command;
 		if((command != 1) && (command != 2)){
-			std::cout << "Error: invalid command!\n";
+			cout << "Error: invalid command!\n";
 			continue; // Return to the loop without exiting
 		}
 		cout << "How do you want the turtle to move?\n";
