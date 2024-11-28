@@ -38,26 +38,16 @@ In both cases, the movement is stopped by forcing the speed to zero and applying
 
 - **Feature 1: User interaction (`node1.cpp`)**
 
+   - Spaw a new turtle with `turtlesim/Spawn`.
    - Users can select which turtle to move, its direction, and speed.
    - Commands are managed via `std::cin` and processed with `switch` statements.
+   - Velocity are updated in real-time using two `Publisher` objects.
 
    **Example interaction:**
 
-	Which turtle do you want to move?
+	Which turtle do you want to move? \ 1 = turtle1 \ 2 = turtle2
 	-----------------------------
-	1 = turtle1
-  	-----------------------------
-  	2 = turtle2
-	-----------------------------
-	How do you want the turtle to move?
-	-----------------------------
-	1 = right
-  	-----------------------------
-  	2 = left
-  	-----------------------------
-  	3 = forward
-  	-----------------------------
-  	4 = backward
+	How do you want the turtle to move? \ 1 = right \ 2 = left \ 3 = forward \ 4 = backward
 	-----------------------------
 	At what speed do you want the turtle to move?
 	-----------------------------
@@ -66,7 +56,7 @@ In both cases, the movement is stopped by forcing the speed to zero and applying
 
   - *Workspace boundaries:* If a turtle gets too close to the edges, its speed is stopped.
   - *Minimum distance:* If the distance between the turtles is less than 2 units, both stop moving.
-  - Positions are updated in real-time using two `Subscriber` objects.
+  - Positions and velocity are updated in real-time using `Subscriber` and `Publisher` objects.
 
 ## Technologies 
 
@@ -104,4 +94,3 @@ This project is ideal for beginners who want to learn ROS by exploring basic con
 Publisher and Subscriber communication.
 User-terminal interaction.
 Collision management in a simulated environment.
-Follow the on-screen instructions in the terminal to control the turtles. For any doubts, refer to the comments in the code.
