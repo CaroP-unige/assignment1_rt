@@ -45,12 +45,18 @@ In both cases, the movement is stopped by forcing the speed to zero and applying
 
    **Example interaction:**
 
-	Which turtle do you want to move? \ 1 = turtle1 \ 2 = turtle2
-	-----------------------------
-	How do you want the turtle to move? \ 1 = right \ 2 = left \ 3 = forward \ 4 = backward
-	-----------------------------
-	At what speed do you want the turtle to move?
-	-----------------------------
+	  Which turtle do you want to move?
+       1 = turtle1
+       2 = turtle2
+	------------------------------------
+	  How do you want the turtle to move?
+       1 = right
+       2 = left
+       3 = forward
+       4 = backward
+	------------------------------------
+	  At what speed do you want the turtle to move?
+	
   
 - **Feature 2: Safety controls (`node2.cpp`)**
 
@@ -75,22 +81,22 @@ Follow these steps to set up the project:
 
 1. Clone the repository:
 
-	- *git clone https://github.com/CaroP-unige/assignment1_rt.git*
-	- *cd assignment1_rt*
+	- `git clone https://github.com/CaroP-unige/assignment1_rt.git`
+	- `cd assignment1_rt`
 
-2. Build the project: *catkin_make*
+2. Build the project: `catkin_make`
 
 3. Launch processes in separate terminals:
 
-	- **Terminal 1**: Start ROS: *roscore*
-	- **Terminal 2**: Launch the turtlesim simulator: *rosrun turtlesim turtlesim_node*
-	- **Terminal 3**: Launch node1: *rosrun turtlesim node1*
-	- **Terminal 4**: Launch node2: *rosrun turtlesim node2*
+	- **Terminal 1**: Start ROS: `roscore`
+	- **Terminal 2**: Launch the turtlesim simulator: `rosrun turtlesim turtlesim_node`
+	- **Terminal 3**: Launch node1: `rosrun turtlesim node1`
+	- **Terminal 4**: Launch node2: `rosrun turtlesim node2`
 
 ## Usage
 
 This project is ideal for beginners who want to learn ROS by exploring basic concepts such as:
 
-Publisher and Subscriber communication.
-User-terminal interaction.
-Collision management in a simulated environment.
+- Publisher and Subscriber communication.
+- User-terminal interaction.
+- Collision management in a simulated environment.
